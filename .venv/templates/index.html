@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gardening Helper</title>
+</head>
+<body>
+  <h1>Plant a Vegetable</h1>
+  <form action="/plant" method="post">
+    <label>Vegetable:</label>
+    <select name="vegetable">
+      {% for veg in veggies %}
+        <option value="{{ veg['Vegetable'] }}">{{ veg['Vegetable'] }} ({{ veg['Variety'] }})</option>
+      {% endfor %}
+    </select><br>
+    <label>Variety:</label>
+    <input type="text" name="variety"><br>
+    <label>Planting Date:</label>
+    <input type="date" name="planting_date"><br>
+    <label>Min Days:</label>
+    <input type="number" name="min_days"><br>
+    <label>Max Days:</label>
+    <input type="number" name="max_days"><br>
+    <input type="submit" value="Plant">
+  </form>
+</body>
+</html>
